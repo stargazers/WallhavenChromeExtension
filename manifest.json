@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+
+    "name": "Wallhaven",
+    "description": "Wallhaven image as a bacgkround",
+    "version": "1.0",
+
+    "permissions": [
+        "activeTab",
+        "https://wallhaven.cc/"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "wallhavenImage.html"
+    },
+    "web_accessible_resources": [
+        "images/*.png",
+        "templates/*"
+      ]
+}
