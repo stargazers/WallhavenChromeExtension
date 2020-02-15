@@ -5,7 +5,7 @@ let DEBUG = false
 // Get it on https://wallhaven.cc/settings/account 
 let api_key = 'YOUR_API_KEY'
 
-// What we search. Can be multiple items, separated with 
+// What we search.
 let query = 'nature'
 
 // Purity. 0 = Off, 1 = On. Values are: SWF, Sketchy, NSFW.
