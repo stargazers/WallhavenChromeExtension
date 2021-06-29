@@ -15,6 +15,9 @@ const purity = '100'
 // Image resolutions to search.
 const resolutions = '1920x1080'
 
+// Delay for slideshow (in milliseconds)
+const delay = 30000
+
 // API URL
 const api_base = 'https://wallhaven.cc/api/v1/search'
 const api_tags_base = 'https://wallhaven.cc/api/v1/w/'
@@ -46,8 +49,8 @@ getTags = (id) => {
     })    
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    let api_url = generateApiUrl()    
+showImage = () => {
+    let api_url = generateApiUrl()        
     let bg = document.getElementById('background')
     let original_image = document.getElementById('original_image')    
     fetch (api_url)
@@ -71,4 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }        
         throw err
     })
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    showImage()
+    console.log("Interval for image change is " + delay/1000 + " seconds")
+    setInterval(function() {
+        console.log("Calling showImage")
+        showImage()
+    }, delay)  
 })
